@@ -55,10 +55,10 @@ function getWeatherData($command)
         try {
             $data = [
           'q' => $location[1],
-          'appid' => getenv("OPEN_WEATHER_API_KEY"),
+          'appid' => getenv("d8e811c8c4e4648a5a7fc26316690948"),
           'units' => 'metric'
         ];
-            $url = getenv("OPEN_WEATHER_API_URL");
+            $url = getenv("http://api.openweathermap.org/data/2.5/weather");
             $query_url = sprintf("%s?%s", $url, http_build_query($data));
             $curl = curl_init();
             curl_setopt($curl, CURLOPT_URL, $query_url);
