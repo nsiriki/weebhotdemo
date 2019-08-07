@@ -30,7 +30,7 @@ if($method == 'POST'){
 	$response = new \stdClass();
 	$response->speech = $text;
 	$response->text = $text;
-	$response->source = "webhook";
+	$response->queryResult->fulfillmentMessages->text->text[0] = "webhook";
 	echo json_encode($response);
 }
 else
