@@ -27,10 +27,11 @@ if($method == 'POST'){
 			break;
 	}
 
-	$response = new \stdClass();
+	//$response = new \stdClass();
 	//$response->speech = $text;
 	//$response->text = $text;
-	$response->queryResult->fulfillmentMessages->text->text = "webhook";
+	//$response->queryResult->fulfillmentMessages->text->text = "webhook";
+	$json->queryResult->fulfillmentMessages->text->text = "Webhook"
 	echo json_encode($response);
 }
 else
