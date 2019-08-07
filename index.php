@@ -26,14 +26,14 @@ if($method == 'POST'){
 			$text = "Sorry, I didnt get that. Please ask me something else.";
 			break;
 	}
-$json->queryResult->fulfillmentMessages->text->text = "fgdfgdfgdg"
+//$json->queryResult->fulfillmentMessages->text->text = "fgdfgdfgdg"
 
 	//$agent = \Dialogflow\WebhookClient::fromData($request->json()->all());
 	//$agent = WebhookClient::fromData($_POST);
 	//$intent = $agent->getIntent();
 	
 	$response = new \stdClass();
-	//$response->speech = $text;
+	$response->speech = $text;
 	//$response->text = $agent->getIntent();
 	$response->queryResult->fulfillmentMessages->text->text = "webhook";
 	echo json_encode($response);
