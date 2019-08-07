@@ -26,6 +26,7 @@ if($method == 'POST'){
 			$text = "Sorry, I didnt get that. Please ask me something else.";
 			break;
 	}
+$json->queryResult->fulfillmentMessages->text->text = "fgdfgdfgdg"
 
 	//$agent = \Dialogflow\WebhookClient::fromData($request->json()->all());
 	//$agent = WebhookClient::fromData($_POST);
