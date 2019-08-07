@@ -27,16 +27,16 @@ if($method == 'POST'){
 			break;
 	}
 
-	$agent = \Dialogflow\WebhookClient::fromData($request->json()->all());
+	//$agent = \Dialogflow\WebhookClient::fromData($request->json()->all());
 	//$agent = WebhookClient::fromData($_POST);
-	$intent = $agent->getIntent();
+	//$intent = $agent->getIntent();
 	
-	//$response = new \stdClass();
+	$response = new \stdClass();
 	//$response->speech = $text;
 	//$response->text = $agent->getIntent();
-	//$response->queryResult->fulfillmentMessages->text->text = "webhook";
-	//echo json_encode($response);
-	echo json_encode($agent->render());
+	$response->queryResult->fulfillmentMessages->text->text = "webhook";
+	echo json_encode($response);
+	//echo json_encode($agent->render());
 }
 else
 {
