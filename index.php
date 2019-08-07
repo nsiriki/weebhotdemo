@@ -38,7 +38,7 @@ $agent->reply($text);
 	//$response->speech = $text;
 	//$response->text = $text;
 	//$response->queryResult->fulfillmentMessages->text->text = "webhook";
-	echo json_encode($response);
+	//echo json_encode($response);
 }
 else
 {
