@@ -28,17 +28,13 @@ if($method == 'POST'){
 	}
 
 	$agent = \Dialogflow\WebhookClient::fromData($request->json()->all());
-$text = \Dialogflow\RichMessage\Text::create()
-    ->text('This is text')
-    ->ssml('<speak>This is <say-as interpret-as="characters">ssml</say-as></speak>')
-;
-$agent->reply($text);
+	$intent = $agent->getIntent();
 	
-	//$response = new \stdClass();
+	$response = new \stdClass();
 	//$response->speech = $text;
-	//$response->text = $text;
-	//$response->queryResult->fulfillmentMessages->text->text = "webhook";
-	//echo json_encode($response);
+	$response->text = $agent->getIntent();
+	$response->queryResult->fulfillmentMessages->text->text = "webhook";
+	echo json_encode($response);
 }
 else
 {
