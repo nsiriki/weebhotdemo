@@ -29,9 +29,9 @@ if($method == 'POST'){
 	
 	
 	$response = new \stdClass();
-	$response->speech = $text;
-	$response->google->expectUserResponse->richResponse->items[0]->simpleResponse->textToSpeech = $text;
-	$response->source = "webhook";
+	//$response->speech = $text;
+	$response->payload->google->expectUserResponse->richResponse->items[0]->simpleResponse->textToSpeech = $text;
+	//$response->source = "webhook";
 	echo json_encode($response);
 	
 	
