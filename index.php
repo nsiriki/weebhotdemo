@@ -26,10 +26,10 @@ if($method == 'POST'){
 			$text = "Sorry, I didnt get that. Please ask me something else.";
 			break;
 	}
-
+	
 	$response = new \stdClass();
 	$response->speech = $text;
-	$response->displayText = $text;
+	$response->google->expectUserResponse->richResponse->items[0]->simpleResponse->textToSpeech = $text;
 	$response->source = "webhook";
 	echo json_encode($response);
 	
