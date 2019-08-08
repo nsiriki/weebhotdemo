@@ -27,11 +27,15 @@ if($method == 'POST'){
 			break;
 	}
 	
-	$response = new \stdClass();
-	$response->speech = $text;
-	$response->google->expectUserResponse->richResponse->items[0]->simpleResponse->textToSpeech = $text;
-	$response->source = "webhook";
-	echo json_encode($response);
+	var chat="success response";
+  response.setHeader('Content-Type','application/json');
+  response.send(JSON.stringify({"fulfillmentText":chat}));
+	
+// 	$response = new \stdClass();
+// 	$response->speech = $text;
+// 	$response->google->expectUserResponse->richResponse->items[0]->simpleResponse->textToSpeech = $text;
+// 	$response->source = "webhook";
+// 	echo json_encode($response);
 	
 	
 }
